@@ -1,4 +1,9 @@
-FROM python:3.12-alpine
+FROM python:3.12-slim-bullseye
+
+# Install system dependencies for psycopg
+RUN apt-get update \
+    && apt-get -y install build-essential libpq-dev \
+    && apt-get clean
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1

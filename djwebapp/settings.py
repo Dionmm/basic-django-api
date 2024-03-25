@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'djwebapp.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'mysecretpassword',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'NAME': os.environ.get("DB_NAME", default="postgres"),
+        'USER': os.environ.get("DB_USER", default="postgres"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT", default=5432),
     }
 }
 
