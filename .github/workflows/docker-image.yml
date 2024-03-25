@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file containerfile --tag django-basic:$(date +%M%H%j)
-        docker push ghcr.io/dionmm/store:django-basic:$(date +%M%H%j)
+        docker push ghcr.io/dionmm/django-basic:$(date +%M%H%j)
